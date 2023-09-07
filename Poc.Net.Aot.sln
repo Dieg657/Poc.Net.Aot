@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{D1C4A25F-1BA0-40D0-96FF-4BEDB1406365}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{51C97B80-4C6F-44C0-ABFB-367EE04BF4D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{80CF7108-5C6E-4CB7-B9B4-ECACFE873A4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{53DD924F-F175-4BA9-A77B-E52B2716546C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{70D3521A-7F02-4FEE-89EE-8ACA673A3E08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{56AC9A2C-2D66-4E6B-80D6-C1913E29AC40}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		create-database.sql = create-database.sql
+		docker-compose.yaml = docker-compose.yaml
+		Dockerfile = Dockerfile
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poc.Net.Aot.Repository", "Poc.Net.Aot.Repository\Poc.Net.Aot.Repository.csproj", "{9DA7F0E7-7784-4B3B-BF4F-8E4D0D304936}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poc.Net.Aot.Infrastructure", "Poc.Net.Aot.Infrastructure\Poc.Net.Aot.Infrastructure.csproj", "{AAE63BC9-F2DF-44EA-B835-D585E4AC4647}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poc.Net.Aot.Domain", "Poc.Net.Aot.Domain\Poc.Net.Aot.Domain.csproj", "{00452D54-BE86-4DA4-8EAD-7EA48EC7C335}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poc.Net.Aot.Application", "Poc.Net.Aot.Application\Poc.Net.Aot.Application.csproj", "{EF09E9F4-1A76-438C-8B4E-41F38F49027A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poc.Net.Aot.Api", "Poc.Net.Aot.Api\Poc.Net.Aot.Api.csproj", "{2195E666-1402-4C4C-B866-FFDAA512A322}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DA7F0E7-7784-4B3B-BF4F-8E4D0D304936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA7F0E7-7784-4B3B-BF4F-8E4D0D304936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DA7F0E7-7784-4B3B-BF4F-8E4D0D304936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA7F0E7-7784-4B3B-BF4F-8E4D0D304936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAE63BC9-F2DF-44EA-B835-D585E4AC4647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE63BC9-F2DF-44EA-B835-D585E4AC4647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE63BC9-F2DF-44EA-B835-D585E4AC4647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE63BC9-F2DF-44EA-B835-D585E4AC4647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00452D54-BE86-4DA4-8EAD-7EA48EC7C335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00452D54-BE86-4DA4-8EAD-7EA48EC7C335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00452D54-BE86-4DA4-8EAD-7EA48EC7C335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00452D54-BE86-4DA4-8EAD-7EA48EC7C335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF09E9F4-1A76-438C-8B4E-41F38F49027A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF09E9F4-1A76-438C-8B4E-41F38F49027A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF09E9F4-1A76-438C-8B4E-41F38F49027A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF09E9F4-1A76-438C-8B4E-41F38F49027A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2195E666-1402-4C4C-B866-FFDAA512A322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2195E666-1402-4C4C-B866-FFDAA512A322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2195E666-1402-4C4C-B866-FFDAA512A322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2195E666-1402-4C4C-B866-FFDAA512A322}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9DA7F0E7-7784-4B3B-BF4F-8E4D0D304936} = {70D3521A-7F02-4FEE-89EE-8ACA673A3E08}
+		{AAE63BC9-F2DF-44EA-B835-D585E4AC4647} = {53DD924F-F175-4BA9-A77B-E52B2716546C}
+		{00452D54-BE86-4DA4-8EAD-7EA48EC7C335} = {80CF7108-5C6E-4CB7-B9B4-ECACFE873A4D}
+		{EF09E9F4-1A76-438C-8B4E-41F38F49027A} = {51C97B80-4C6F-44C0-ABFB-367EE04BF4D0}
+		{2195E666-1402-4C4C-B866-FFDAA512A322} = {D1C4A25F-1BA0-40D0-96FF-4BEDB1406365}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E97BE362-FB9D-4C4B-AF1F-95058BF3A648}
+	EndGlobalSection
+EndGlobal
