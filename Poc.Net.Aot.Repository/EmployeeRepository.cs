@@ -6,13 +6,13 @@ using Poc.Net.Aot.Repository.Queries;
 
 namespace Poc.Aot.Repository
 {
-    public class EmployeeRepository : IEmployeeRepository, IDisposable
+    public class EmployeeRepository : IEmployeeRepository
     {
-        public readonly string _connectionString;
+        public readonly NpgsqlDataSource _dataSource;
 
-        public EmployeeRepository(string connectionString)
+        public EmployeeRepository(NpgsqlDataSource dataSource)
         {
-            _connectionString = connectionString;
+            _dataSource = dataSource;
         }
 
         public async Task<IEnumerable<Employee>> GetAll()
@@ -21,8 +21,7 @@ namespace Poc.Aot.Repository
 
             try
             {
-                using var dataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
-                using var connection = dataSource.OpenConnection();
+                using var connection = await _dataSource.OpenConnectionAsync();
                 using var cmd = new NpgsqlCommand(EmployeeQueries.GET_ALL_EMPLOYEES, connection);
                 using var reader = await cmd.ExecuteReaderAsync();
 
@@ -42,6 +41,10 @@ namespace Poc.Aot.Repository
                         DeleteAt = DateTimeOffset.TryParse(reader["deletedat"].ToString(), out DateTimeOffset deletedat) ? deletedat : null,
                     });
                 }
+
+                await reader.CloseAsync();
+                cmd.Dispose();
+                await connection.CloseAsync();
             }
             catch (Exception)
             {
@@ -56,8 +59,7 @@ namespace Poc.Aot.Repository
         {
             try
             {
-                using var dataSource = new NpgsqlDataSourceBuilder(_connectionString).Build();
-                using var connection = dataSource.OpenConnection();
+                using var connection = await _dataSource.OpenConnectionAsync();
                 using var cmd = new NpgsqlCommand(EmployeeQueries.INSERT_EMPLOYEE, connection);
 
                 cmd.Parameters.AddWithValue("p0", model.Role);
@@ -68,17 +70,14 @@ namespace Poc.Aot.Repository
                 cmd.Parameters.AddWithValue("p5", model.Salary);
 
                 await cmd.ExecuteNonQueryAsync();
+                cmd.Dispose();
+                await connection.CloseAsync();
             }
             catch (Exception)
             {
 
                 throw;
             }
-        }
-
-        public void Dispose()
-        {
-            GC.SuppressFinalize(this);
         }
     }
 }
